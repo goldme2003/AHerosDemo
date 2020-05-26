@@ -1,0 +1,83 @@
+<p>device-list works!</p>
+<div>
+  <table class="table table-responsive table-sm">
+   <!-- <caption>Device Table</caption>-->
+
+    <thead class="thead-dark">
+
+<!--      <th *ngFor="let subItem of resItem | keyvalue">{{subItem.key}}</th>-->
+    <th>资产编号</th>
+<th>资产性质</th>
+<th>资产ID</th>
+<th>间隔单元</th>
+<th>投运日期</th>
+<th>所属城市</th>
+<th>所属大馈线</th>
+<th>所属大馈线ID</th>
+<th>所属站电压等级</th>
+<th>所属单位</th>
+<th>设备代码</th>
+<th>设备ID</th>
+<th>设备增加类型</th>
+<th>设备信息ID</th>
+<th>设备生产厂家</th>
+<th>设备名称</th>
+<th>设备主人</th>
+<th>设备状态</th>
+<th>设备类型</th>
+<th>设备类型编码</th>
+<th>EquipBrandOpLibID</th>
+<th>大馈线分支</th>
+<th>大馈线分支ID</th>
+<th>功能位置</th>
+<th>投运编号</th>
+<th>最近操作日期</th>
+<th>运维班组</th>
+<th>制造国家</th>
+<th>制造日期</th>
+<th>制造单位</th>
+<th>备注</th>
+<th>ObjID</th>
+<th>运维单位</th>
+<th>运维编号</th>
+<th>相别</th>
+<th>相数</th>
+<th>pmCode</th>
+<th>专业类型</th>
+<th>工程名称</th>
+<th>工程编号</th>
+<th>注册日期</th>
+<th>站建筑ID</th>
+<th>战线名称</th>
+<th>变电站名称</th>
+<th>类型编号</th>
+<th>电压等级</th>
+<th>电压等级编码</th>
+<th>电压等级名称</th>
+
+
+
+
+    </thead>
+        <tbody  *ngFor="let resItem of responses.content" >
+        <tr>
+          <td  *ngFor="let subItem of resItem | keyvalue">{{subItem.value}}</td>
+        </tr>
+        </tbody>
+<!--    <tbody *ngFor="let response of responses | keyvalue">
+    <tr>
+      <td><span class="badge">{{response.content[1]}}</span></td>
+      <td><a routerLink="/detail/1">
+        {{response.content[1]}}
+      </a></td>
+    </tr>
+
+    </tbody>-->
+
+  </table>
+<!--  <div *ngFor="let resItem of responses.content[1] | keyvalue"><h5 *ngFor="let subItem of resItem | keyvalue">{{subItem.value}}</h5></div>-->
+  <div *ngFor="let resItem of responses.content"><h5 *ngFor="let subItem of resItem | keyvalue">{{subItem.key}}</h5></div>
+
+
+
+</div>

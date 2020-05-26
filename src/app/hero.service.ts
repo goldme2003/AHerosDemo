@@ -12,9 +12,9 @@ import {Hero} from './hero';
   providedIn: 'root'
 })
 export class HeroService {
-  private heroesUrl = 'api/heroes';
+  private heroesUrl = 'power-dev-info/angtest';
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    headers: new HttpHeaders({'Content-Type': 'text'})
   };
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
@@ -51,7 +51,7 @@ export class HeroService {
   addHero(hero: Hero): Observable<Hero> {
     return this.http.post(this.heroesUrl, hero, this.httpOptions)
       .pipe(
-        tap((newHero:Hero) => this.log(`add new hero w/ id=${newHero.id}`)),
+        tap((newHero: Hero) => this.log(`add new hero w/ id=${newHero.id}`)),
         catchError(this.handleError<Hero>('addHero'))
       );
   }
